@@ -7,14 +7,19 @@ Závod -> omezení věkem i technickým stupněm (shora, zdola) - podmínky při
       - po spuštění se lidé rozlosují do tříčlenných skupin
 	    vítěz skupiny se utká systém pavouk pool A winner 1 jde na pool F winner 2 a pool A winner 2 jde na pool F winner 1 a vítěžové párů se perou spolu, čímž se určí celkový vítěz
 		pavouk až do úplného vítěze
+		
 		hraje se na dva body- M D K T
+		
 		X je remíza, E je remíza, OO je odstoupení ze závodu
+		
 		pokud jsou v poolu je dva, tak postupují oba, ale musí se zjistit, kdo je první a kdo je druhý
+		
 		lichý počet poolů znamená, že jeden pool jde až do dalšího kola
+		
 		v poolu rozhoduje počet výher a při shodě pak počet bodů
-		zápas trvá 3 minuty (zajímavost) hraje se na body, případně ale může být remíza, nebo jeden bod a vyprší čas
 ### Technologie
 Desktop: .NET Core 5.0, SQLite3
+
 Data: Python
 ### Časový plán
 |Úkol|Doba zpracování|
