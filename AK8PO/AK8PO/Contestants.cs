@@ -9,6 +9,21 @@ namespace AK8PO
 {
     internal static class Contestants
     {
+        public static void DeleteContestant(string email)
+        {
+            using (var connection = new SqliteConnection("Data Source=" + Database.databaseFilename))
+            {
+                connection.Open();
+
+                var command = connection.CreateCommand();
+
+                command.CommandText = "DELETE FROM contestants WHERE email = @email";
+                command.Parameters.AddWithValue("@email", email);
+                command.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
         public static int AddContestant(Contestant newContestant)
         {
             using (var connection = new SqliteConnection("Data Source=" + Database.databaseFilename))
@@ -50,7 +65,7 @@ namespace AK8PO
                     {
                         Contestant contestantElement = new Contestant(sqliteDataReader.GetString(0), sqliteDataReader.GetString(1),
                                                                       sqliteDataReader.GetString(2), sqliteDataReader.GetInt16(3),
-                                                                      sqliteDataReader.GetInt16(4));
+                                                                      (ArtLevel)sqliteDataReader.GetInt16(4));
                         contestantsList.Add(contestantElement);
                     }
                 }

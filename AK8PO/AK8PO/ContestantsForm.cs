@@ -14,6 +14,7 @@ namespace AK8PO
     {
         public ContestantsForm()
         {
+            this.KeyPreview = true;
             InitializeComponent();
 
             this.ltvMain.View = View.Details;
@@ -37,6 +38,31 @@ namespace AK8PO
                 ltvMain.Items.Add(item);
             }
             this.ltvMain.EndUpdate();
+        }
+        private void ContestantsForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                e.Handled = false;
+                Close();
+            }
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (ltvMain.SelectedIndices.Count < 1)
+                {
+                    MessageBox.Show("Nevybrali jste žádného zápasníka ke smazání.", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Opravdu si přejete vymazat zápasníka?", "Varování", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        Contestants.DeleteContestant(ltvMain.Items[ltvMain.SelectedIndices[0]].SubItems[2].Text);
+                        ltvMain.Items[ltvMain.SelectedIndices[0]].Remove();
+                    }
+                }
+
+            }
         }
     }
 }

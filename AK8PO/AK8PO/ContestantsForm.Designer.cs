@@ -35,17 +35,18 @@
             // 
             this.ltvMain.FullRowSelect = true;
             this.ltvMain.HideSelection = false;
-            this.ltvMain.Location = new System.Drawing.Point(12, 12);
+            this.ltvMain.Location = new System.Drawing.Point(14, 13);
             this.ltvMain.Name = "ltvMain";
-            this.ltvMain.Size = new System.Drawing.Size(776, 426);
+            this.ltvMain.Size = new System.Drawing.Size(872, 447);
             this.ltvMain.TabIndex = 0;
             this.ltvMain.UseCompatibleStateImageBehavior = false;
+            this.ltvMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ContestantsForm_KeyDown);
             // 
             // ContestantsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 472);
             this.Controls.Add(this.ltvMain);
             this.Name = "ContestantsForm";
             this.Text = "ContestantsForm";

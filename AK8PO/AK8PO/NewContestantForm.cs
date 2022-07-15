@@ -21,7 +21,7 @@ namespace AK8PO
 
         private void btnAddContestant_Click(object sender, EventArgs e)
         {
-            Contestant contestant = new Contestant(this.txtName.Text, this.txtSurname.Text, this.txtEmail.Text, 5, (short)this.nmuAge.Value);
+            Contestant contestant = new Contestant(this.txtName.Text, this.txtSurname.Text, this.txtEmail.Text, (short)this.nmuAge.Value, (ArtLevel)this.cmbLevel.SelectedIndex);
             
             Contestants.AddContestant(contestant);
 
